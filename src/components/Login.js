@@ -36,7 +36,7 @@ const Login = () => {
                         }).then(() => {
                             // Profile updated!
                             // ...
-                            navigate("/browse");
+                            // navigate("/browse");
                         }).catch((error) => {
                             // An error occurred
                             // ...
@@ -44,7 +44,7 @@ const Login = () => {
                         });
 
                         console.log(user);
-                        navigate("./browse");
+                        // navigate("./browse");
                     })
                     .catch((error) => {
                         const errorCode = error.code;
@@ -61,7 +61,7 @@ const Login = () => {
                         const user = userCredential.user;
                         // ...
                         console.log(user);
-                        navigate("./browse");
+                        // navigate("./browse");
                     })
                     .catch((error) => {
                         const errorCode = error.code;

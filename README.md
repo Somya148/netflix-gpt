@@ -12,6 +12,9 @@
   - authentication
   - created redux store 
   - Implemented SignOut
+  - Register to TMDB API create an App and get access token 
+  - get data from tmdb nowplaying documentation (Select React)
+  - Completed the Main Container (Background Video and title and overview)
 
   # Features
   - Login/Sign Up Page

@@ -62,10 +62,36 @@ import React, { useState, useEffect } from 'react';
 import { auth } from '../utils/firebase';
 import { signOut } from "firebase/auth";
 import { useNavigate } from 'react-router';
+import { onAuthStateChanged } from 'firebase/auth';
+
+import { useDispatch } from 'react-redux';
+import { removeUser } from '../utils/userSlice';
+import { addUser } from '../utils/userSlice';
+
 
 const Header = () => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const [isSignedIn, setIsSignedIn] = useState(false);
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // User is signed in, see docs for a list of available properties
+                // https://firebase.google.com/docs/reference/js/auth.user
+                const { uid, email, displayName } = user;
+                dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
+                // ...
+                navigate("/browse")
+            } else {
+                // User is signed out
+                // ...
+                dispatch(removeUser());
+                navigate("/")
+            }
+        });
+
+    }, [])
 
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
