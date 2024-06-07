@@ -15,6 +15,9 @@
   - Register to TMDB API create an App and get access token 
   - get data from tmdb nowplaying documentation (Select React)
   - Completed the Main Container (Background Video and title and overview)
+  - GPT Search Page
+  - GPT Search Bar
+  - (BONUS) Multi-language Feature in our App)
 
   # Features
   - Login/Sign Up Page
