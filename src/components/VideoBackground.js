@@ -15,7 +15,7 @@ const VideoBackground = ({ movieId }) => {
         console.log(json);
         // const trailer = json.results.filter((video) => video.name === "Official Final Trailer");
         const trailer = json.results.find((video) => video.name === "Official Final Trailer");
-        console.log(trailer);
+        // console.log(trailer);
         setTrailerId(trailer.key);
         // dispatch(addTrailerVideo(trailer));
     };
